@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex,position,header 관련 수업</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  header {
+   width: auto;
+   height: 70px;
+   background-color: darkcyan;
+  }
+  header:hover {
+    background-color: aquamarine;
+  }
+  .flex-box {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    margin: 40px auto 0;
+    background-color: lightyellow;
+    display: inline-flex;
+    /**/
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .flex-content {
+    
+    width: 200px;
+    height: 200px;
+    margin: 40px auto 0;
+    background-color: blanchedalmond;
+    
+  }
+  .position {
+    position: absolute;
+    width: 500px;
+    height: 50px;
+    background-color: lightcoral;
+    top: 3.5px;
+    left: 2;
+    border: 5px solid lightsalmon;
+  }
+</style>
+<body>
+  <div class="container">
+    <header></header>
+    <div class="flex-box">
+      <div class="flex-content"></div>
+      <div class="flex-content"></div>
+      <div class="flex-content"></div>
+      <div class="position"></div>
+    </div>
+  </div>
+  
+</body>
+</html>
