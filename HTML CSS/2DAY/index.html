@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>position 관련 수업</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .out-box {
+    background-color: skyblue;
+    margin: 40px auto 0;
+    width: 500px;
+    height: 500px;
+    position: relative;
+  }
+  .in-box {
+    background-color: rgba(94, 194, 233, 0.952);
+    margin: 40px auto 0;
+    width: 400px;
+    height: 400px;
+    left: 50px;
+    border: 3px solid blue;
+    position: absolute;
+  }
+  .absoulte-box {
+    background-color: rgba(94, 194, 233, 0.952);
+    margin: 50px auto 0;
+    width: 350px;
+    height: 350px;
+    top: 10px;
+    left: 75px;
+    border: 3px solid white;
+    position: absolute;
+</style>
+<body>
+  <div class="container">
+    <div class="out-box">
+      <div class="in-box"></div>
+      <div class="in-box"></div>
+      <div class="in-box"></div>
+      <div class="absoulte-box"></div>
+    </div>
+  </div>
+  
+</body>
+</html>
