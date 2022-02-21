@@ -1,1 +1,1 @@
-# 수업을 배운 내용을 정리   :wave:
+:wave: :wave: :wave: :wave:
