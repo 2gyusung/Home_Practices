@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .card-container {
+    width: 1000px;
+    height: 400px;
+    background-color: #ccc;
+    margin: 200px auto;
+    display: flex;
+  }
+  .col {
+    height: 100%;
+    flex: 1;
+    color: #fff;
+    padding: 25px;
+    /*img 삽입을 위해 position 지정*/
+    position: relative;
+    transition: 0.6s;
+    box-shadow: 5px 5px 10px 0;
+  }
+  h2 {
+    text-align: left;
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .caption {
+    max-width: 230px;
+    font-size: 12px;
+    margin: 28px 0;
+    /*hover 할 때에 보여짐*/
+    display: none;
+  }
+  .caption button {
+    border: 1px solid #fff;
+    border-radius: 30px;
+    background-color: transparent;
+    outline: none;
+    padding: 8px 18px;
+    color: #fff;
+    margin-top: 25px;
+    cursor: pointer;
+    font-size: 12px;
+  }
+  .col img {
+    width: 200px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+  .col:hover {
+    flex-grow: 3;
+    background-color: skyblue;
+    box-shadow: 5px 5px  10px 0s;
+  }
+  
+  .col:hover h2 {
+    text-align: left;
+  }
+   /* hover 작동 할때에 설명 글 보임*/ 
+  .col:hover .caption  {
+    display: block;
+  }
+  
+</style>
+<body>
+  <div class="container">
+    <div class="card-container">
+    <div class="col">
+      <h2>Audio</h2>
+      <div class="caption">
+        <p>
+          Strength does not come from the physical capacity. It comes from
+          an indomitable will.
+        </p>
+        <button type="submit">더 보기</button>
+          </div>
+          <img src="main_prod_audio.224ca686.png" alt="">
+        </div>
+
+        <div class="col">
+          <h2>Camera</h2>
+          <div class="caption">
+            <p>
+              Strength does not come from the physical capacity. It comes from
+              an indomitable will.
+            </p>
+            <button type="submit">더 보기</button>
+              </div>
+              <img src="main_prod_camera.24473fcf.png" alt="">
+            </div>
+
+            <div class="col">
+              <h2>PlayStaion</h2>
+              <div class="caption">
+                <p>
+                  Strength does not come from the physical capacity. It comes from
+                  an indomitable will.
+                </p>
+                <button type="submit">더 보기</button>
+                  </div>
+                  <img src="main_prod_ps.e4346725.png" alt="">
+                </div>
+                <div class="col">
+                  <h2>Video Camera</h2>
+                  <div class="caption">
+                    <p>
+                      Strength does not come from the physical capacity. It comes from
+                      an indomitable will.
+                    </p>
+                    <button type="submit">더 보기</button>
+                      </div>
+                      <img src="main_prod_vcamera.7e8353a1.png" alt="">
+                    </div>
+</div>
+</body>
+</html>
