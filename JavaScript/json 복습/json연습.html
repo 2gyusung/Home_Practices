@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script
+src="https://code.jquery.com/jquery-3.6.0.min.js"
+integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+crossorigin="anonymous"
+></script>
+<script>
+  $(function () {
+        var jsonData = {
+          name: "포항 아줌마",
+          age: 40,
+          addr: "포항",
+          family: {
+            dad: "신형만",
+            mon: "봉미선",
+            sister :'신짱아'
+          }
+        };
+        // 포항아줌마 출력
+        console.log(jsonData.name);
+        // 신형만 출력
+        console.log(jsonData.family.dad)
+        console.log(jsonData.family.sister)
+     
+        var jsonData2 = [{name : '짱구', hobby :'볼링',family:{dad : '신형만',
+      mom :'봉미선'}}, {name : '유리'}, {name : '맹구'}];
+        // 전체 출력
+      console.log (jsonData2);
+      
+      // 데이터 변경
+      // jsonData2.family.mom = '신봉선';
+      jsonData2[0].family.mom = '신봉선';
+      console.log(jsonData2.mom);
+      
+      // 취미 탁구로 변경
+      jsonData2[0].hobby = '탁구';
+        // 총합 더하기 (배열 나올 때 for문으로 할 것)
+        var jsonData3 = [{sal : 3000}, {sal : 5000}, {sal : 4400}, {sal : 2300}];
+        var num = 0;
+        for(var i = 0; i<jsonData3.length; i++) {
+          num += jsonData3[i].sal;
+        }
+
+        console.log(num);
+        // 배열 2번째 출력하기
+        console.log(jsonData3[2]);
+
+        var jsonData5 = {name : "보노보노", 
+                addr : "보노보노숲", 
+                friend : ['너부리','포로리','야옹이형'],
+                family : [{name : '보노보노아빠', age : 34},{name : '보노보노엄마', age : 30}],
+                hobby : "낮잠"
+
+      }
+      // 전체 출력 
+      console.log(jsonData5)
+      // 문제 1 Friend의 길이를 구하시오.
+      console.log(jsonData5.friend.length)
+      // 문제 2 family 나이를 계산
+      var num3 = 0;
+      for(var i=0; i<jsonData5.family.length; i++){
+        num3 += jsonData5.family[i].age;
+      }
+      console.log('총 합은 :' +num3);
+      // 취미 변경
+    jsonData5.hobby = '볼링'; 
+    // 추가하기
+    jsonData5.saying = '포로리야 놀자아'
+    console.log(jsonData5.saying)
+    });
+     
+</script>
+</html>
