@@ -5,14 +5,14 @@ const timeDiv = document.getElementById('time');
 // getTime 함수
 function getTime(){
   let now = new Date();
-  let year = now.getFullYear();
-  let month = now.getMonth() + 1;
-  let date = now.getDate();
-  let hour = now.getHours();
-  let minute = now.getMinutes();
-  let second = now.getSeconds();
+  let year = now.getFullYear(); //현재 시각 년도 
+  let month = now.getMonth() + 1; //현재 시각 월 
+  let date = now.getDate(); // 현재 시각 일
+  let hour = now.getHours();  // 현지 시각으로 현재 시각에 해당하는 숫자를 반환함.
+  let minute = now.getMinutes(); //현재 시각의 분에 해당하는 숫자
+  let second = now.getSeconds();   // 현재 시각의 초
 
-  month = month < 10 ? `0${month}` : month;
+  month = month < 10 ? `0${month}` : month; //? 삼항연산에서 10이 무엇인지?
   date = date < 10 ? `0${date}` : date;
   hour = hour < 10 ? `0${hour}` : hour;
   minute = minute < 10 ? `0${minute}` : minute;
