@@ -4,7 +4,7 @@ const timeDiv = document.getElementById('time');
 
 // getTime 함수
 function getTime(){
-  let now = new Date();
+  let now = new Date(); //현재 날짜 및 시간
   let year = now.getFullYear(); //현재 시각 년도 
   let month = now.getMonth() + 1; //현재 시각 월 
   let date = now.getDate(); // 현재 시각 일
@@ -18,10 +18,10 @@ function getTime(){
   minute = minute < 10 ? `0${minute}` : minute;
   second = second < 10 ? `0${second}` : second;
 
-  todayDiv.textContent = `${year}년 ${month}월 ${date}일`
+  todayDiv.textContent = `${year}년 ${month}월 ${date}일` // 날짜와 시간을 표시
   timeDiv.textContent = `${hour}:${minute}:${second}`
 }
 
 // setInterval 메소드
 getTime()
-setInterval(getTime, 1000);
+setInterval(getTime, 1000); //getTime 함수를 1초마다 호출하기 위해 setInterval 메소드를 사용
