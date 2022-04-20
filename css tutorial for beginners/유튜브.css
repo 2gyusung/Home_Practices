@@ -48,7 +48,7 @@ a {
     position: relative;
     color: black;
     color: transparent;
-    animation: text_reveal 5s ease forwards; /*  ? */
+    animation: text_reveal 5s ease forwards; /*  @keyframes  */
     animation-delay: 1.5s;
 
 }
@@ -71,7 +71,7 @@ a {
     height: 100%;
     width: 0;
     background-color: royalblue;
-    animation: text_reveal_box 1s ease;
+    animation: text_reveal_box 1s ease; /*@keyframes */
     animation-delay: 1s;
 
 }
