@@ -70,7 +70,7 @@ a {
     left: 0;
     height: 100%;
     width: 0;
-    background-color: crimson;
+    background-color: royalblue;
     animation: text_reveal_box 1s ease;
     animation-delay: 1s;
 
@@ -87,9 +87,9 @@ a {
 #hero .cta {
     display: inline-block;
     padding: 10px 30px ;
-    color: crimson;
+    color: royalblue;
     background-color: transparent;
-    border: 2px solid crimson;
+    border: 2px solid royalblue;
     font-size: 2rem;
     text-transform: uppercase;
     margin-top: 35px;
@@ -99,7 +99,7 @@ a {
 }
 #hero .cta:hover {
     color: white;
-    background-color: crimson;
+    background-color: royalblue;
     border-radius: 5px;
 
 }
@@ -125,19 +125,7 @@ a {
    margin: 0 auto;
    padding: 100px 0;
 }
-#services .section-title {
-    font-size: 4rem;
-    font-weight: 300;
-    color: black;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: .2rem;
-    text-align: center;
 
-}
-#service .section-title span {
-    color: crimson;
-}
 #service .service-top p {
     color: black;
     font-size: 1.4rem;
@@ -230,16 +218,116 @@ p {
 
 }
 
+.section-title {
+    font-size: 4rem;
+    font-weight: 300;
+    color: black;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    text-align: center;
+
+}
+#service .section-title span {
+    color: crimson;
+}
 
 #services .service-bottom .icon  img {
     height: 100%;  /* ?*/
     color: white;
     width: 100%;
     object-fit: cover;
+
     
 }
 
 /* End Service Section */
+
+/* Project section */
+#projects .projects {
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+#projects .project-header h1{
+    margin-bottom: 50px;
+}
+#projects .all-projects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.projects .projects-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    margin: 20px auto;
+    overflow:  hidden;
+    border-radius: 10px;
+
+}
+#projects .project-info {
+    padding: 30px;
+    flex-basis: 50%;
+   
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+    color: white;
+
+}
+
+#projects .project-info h1{
+    font-size: 4rem;
+    font-weight: 500; 
+}
+#projects .project-info h2 {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-top: 10px;
+}
+#projects .project-info p {
+    color: white;
+
+}
+#projects .project-img {
+    flex-basis: 50%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+#projects .project-img:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+    opacity: .3;
+
+}
+
+
+#projects .project-img img {
+    transition: .3s ease transform;
+}
+
+#projects .project-item:hover .project-img img{
+    transform: scale(1.1);
+}
+
+
+/* End Project section */
 
 
 /* keyFrame */
@@ -266,3 +354,4 @@ p {
     }
 }
 /* End keyFrame */
+
