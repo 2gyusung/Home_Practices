@@ -1,13 +1,81 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-.sidebar li ul {
-    list-style: none;
-    text-decoration: none;
-}
-.sidebar li a{
-    text-decoration: none;
-    color: black;
-}
+      body {
+          background: url(pexels-freestocksorg-449751.jpg);
+          background-size: cover;
+          background-color: transparent;
+
+
+     
+        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      
+    }
+    .covidbox {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+    }
+    .content wrap{
+        width: 100%;
+        padding: 80%;
+    }
+    
+    .row {
+      margin-top: 50px;
+      display: flex;
+      flex-direction:row;
+      border: 1px solid transparent;
+      box-shadow: 0px 0px 18px 0 #0000002c;
+      border-radius: 15px;
+      padding: 75px;
+      
+    }
+    .box  {
+      margin-right: 50px;
+    }
+    .box p {
+      text-align: center;
+    }
+    .side-nav {
+      width: 250px;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: transparent;
+      padding: 20px 30px;
+    }
+    /*nav 관련*/
+    .nav-links {
+      list-style: none;
+    }
+  
+    .nav-links li {
+      padding: 20px 0;
+      border: 1px solid transparent;
+      margin-bottom: 15px;
+      text-align: center;
+      border-radius: 15px;
+      box-shadow: 0px 0px 18px 0 #0000002c;
+    
+    }
+   
+  
+    .nav-links a {
+      text-decoration: none;
+      color: black;
+      
+    }
+    .nav-links li:nth-child(1) {
+      font-weight: bolder;
+    
+    }
+    .nav-links li a i {
+      font-size: 22px;
+
+      margin-right: 20px;
+
+    }
+
