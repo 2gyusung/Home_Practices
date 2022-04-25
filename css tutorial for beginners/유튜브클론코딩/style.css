@@ -1,5 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Gideon+Roman&family=Sunflower:wght@300&display=swap');
+
+:root {
+     /* color */
+     --white-color:#fff;
+     --black-color:#140a00;
+     --blue-color: #045fd4;
+     --red-color:#ff0000;
+     --grey-dark-color:#909090;
+     --gray-light-color:#e0e0e0;
+     /* size */
+        --padding :12px;
+     --avatar-size : 36px;
+     /* font-size */
+     --font-large: 18px;
+     --font-medium : 14px;
+     --font-small : 12px;
+     --font-micro : 10px
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Gideon Roman', cursive;
+    font-family: 'Sunflower', sans-serif;
+}
+
+body {
+    font-family: 'Gideon Roman', cursive;
+    font-family: 'Sunflower', sans-serif;
+
+}
+
+/*header  */
+header { 
+    display: flex;
+    justify-content: space-between;
+    padding: var(--padding);
+    background-color: var(--black-color);
+    color: var(--white-color);
+}
+
+header .logo {
+    font-size: var(--font-large);
+}
+
+header .logo i {
+    color: var(--red-color);
+}
+
+header .icons .fa-search {
+    margin-right: var(--padding);
+}
+/* End header  */
+
+/* Video Player */
+
+.player {
+    position: sticky; /*영상  상단바 고정*/
+    top: 0; /*영상  상단바 고정*/
+    text-align: center;
+    background-color: #140a00;
+}
+
+.player video {
+    width: 100%;
+    height: 100%;
+    max-width: 1000px; /*경계선 */
 }

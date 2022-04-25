@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>Youtube Mobile</title>
 </head>
@@ -25,7 +26,7 @@
 
       <!-- Video Player -->
   <section class="player">
-      <video control src="video/Skyscrapers - 91744.mp4"></video>
+      <video controls src="video/Skyscrapers - 91744.mp4"></video>
   </section>
 
   <!-- video info -->
@@ -53,9 +54,44 @@
           <li><button> <i class="fas fa-share"></i></button></li>
           <li><button> <i class="fas fa-plus"></i></button></li>
       </div>
-      <div class="channel"></div>
+      <!-- channel -->
+      <div class="channel">
+          <div class="metadata">
+              <img src="img/pexels-наташа-чижевская-11866150.jpg" alt="">
+              <div class="info">
+              <div class="name">이규성</div>
+              <div class="subscribers">1M subscribers</div>
+            </div>
+          </div>
+          <button class="subscribers">subscribers</button>
+      </div>
   </section>
-  <section class="UpNext"></section>
+  <!-- End channel -->
+  <section class="UpNext">
+      <span class="title">Up Next</span>
+      <ul>
+          <li class="item">
+              <img src="img/pexels-наташа-чижевская-11866150.jpg" alt="">
+              <div class="info">
+                  <span class="title">프론트엔드 , 프론트엔드가 되고 싶다면 ?</span>
+                  <span class="name">이규성</span>
+              </div>
+              <button class="moreBtn">fas fa-ellipsis-vsubscribe</button>
+          </li>
+          <li class="item"> <img src="img/pexels-наташа-чижевская-11866150.jpg" alt="">
+            <div class="info">
+                <span class="title">프론트엔드 , 프론트엔드가 되고 싶다면 ?</span>
+                <span class="name">이규성</span>
+            </div>
+            <button class="moreBtn">fas fa-ellipsis-vsubscribe</button></li>
+          <li class="item"> <img src="img/pexels-наташа-чижевская-11866150.jpg" alt="">
+            <div class="info">
+                <span class="title">프론트엔드 , 프론트엔드가 되고 싶다면 ?</span>
+                <span class="name">이규성</span>
+            </div>
+            <button class="moreBtn">fas fa-ellipsis-vsubscribe</button></li>
+      </ul>
+  </section>
 </body>
 </html>
 <!-- 시간 : 14 : 15 -->
