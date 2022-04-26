@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Gideon+Roman&family=Sunflower:wght@300&display=swap');
 
+/* Consistent */
 :root {
      /* color */
      --white-color:#fff;
@@ -9,7 +10,7 @@
      --grey-dark-color:#909090;
      --gray-light-color:#e0e0e0;
      /* size */
-        --padding :12px;
+     --padding :12px;
      --avatar-size : 36px;
      /* font-size */
      --font-large: 18px;
@@ -40,7 +41,16 @@ header {
     background-color: var(--black-color);
     color: var(--white-color);
 }
+li {
+    list-style: none;
+}
 
+button,
+button:focus {
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
 header .logo {
     font-size: var(--font-large);
 }
@@ -54,11 +64,22 @@ header .icons .fa-search {
 }
 /* End header  */
 
+/* SASS PostCSS */
+/*header {
+    .logo {
+
+    }
+    .icons {
+
+    }
+}
+*/
+
 /* Video Player */
 
 .player {
     position: sticky; /*영상  상단바 고정*/
-    top: 0; /*영상  상단바 고정*/
+    top: 0; /*영상  상단바 고정 위치*/
     text-align: center;
     background-color: #140a00;
 }
@@ -67,4 +88,150 @@ header .icons .fa-search {
     width: 100%;
     height: 100%;
     max-width: 1000px; /*경계선 */
+}
+body > .info {
+    padding: var(--padding);
+}
+
+.info .metadata .hashtags {
+    display: flex;
+    font-size: var(--font-small);
+    color: var(--blue-color);
+}
+.info .metadata .hashtags li {
+    margin-right: var(--padding);
+    
+}
+.info .metadata .titleAndButton {
+    display: flex;
+}
+/* CSS line Clamp https://developer.mozilla.org/ko/docs/Web/CSS/-webkit-line-clamp
+title 2줄 */
+.info .metadata .titleAndButton .title {
+    font-size: var(--font-medium);
+    margin-right: var(--padding);
+   
+
+}
+.info .metadata .titleAndButton .title .clamp {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.info .metadata .titleAndButton .moreBtn {
+    height: 100%;
+    transition: transform 300ms ease-in-out;
+}
+.info .metadata .titleAndButton .moreBtn .clicked {
+    transform: rotate(180deg);
+}
+
+/*  */
+.info .metadata .views {
+    font-size: var(--font-small);
+    color: var(--grey-dark-color);
+}
+
+/* Action Btn */
+.info .actions{ 
+    display: flex;
+    justify-content: space-around;
+    margin: var(--padding) 0;
+}
+.info .actions button {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--font-small);
+}
+
+.info .actions button i {
+    margin: 0 auto;
+    margin-bottom: calc(var(--padding) / 2);/* var(--padding) /2 로 계산 된 결과값이 나옴 */
+    font-size: 16px;
+}
+.info .actions button i.active {
+    color: var(--blue-color);
+}
+
+/* channel  */
+.info .channel {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--gray-light-color);
+    border-bottom: 1px solid var(--gray-light-color);
+}
+/* channel  */
+.info.channel .metadata img {
+    width: var(--avatar-size);
+    height: var(--avatar-size);
+    border-radius: 50%;
+}
+
+/* channel  */
+.info .channel .metadata {
+    display: flex;
+    align-items: center;
+}
+/* channel  */
+.info .channel .metadata .info {
+    display: flex;
+    flex-direction: column;
+}
+/* channel  */
+.info .channel .metadata .info  .name {
+    font-size: var(--font-medium);
+}
+/* channel  */
+.info .channel .metadata .info .subscribers {
+    font-size: var(--font-small);
+    color: var(--grey-dark-color);
+}
+/* channel  */
+.upNext {
+    padding: 0 var(--padding);
+}
+.upNext > .title {
+    font-size: var(--font-medium);
+    color: var(--grey-dark-color);
+    margin-bottom: calc(var(--padding) / 2);
+}
+.upNext .item {
+    display: flex;
+    margin-top: var(--padding);
+}
+.upNext .item  .img {
+    flex: 1 1 35%;
+    margin-right: var(--padding);
+}
+.upNext .item  .img  img {
+    width: 100%;
+}
+.upNext .item .info {
+    flex: 1 1 60%;
+}
+.upNext .item  .moreBtn {
+    flex: 1 1 5%;
+}
+.upNext .item .info {
+    display: flex;
+    flex-direction: column;
+}
+.upNext .item .info .title {
+    font-size: var(--font-small);
+}
+.upNext .item .info  .name,
+.upNext .item .info .views {
+    font-size: var(--font-micro);
+    color: var(--gray-light-color);
+}
+.infoAndUpNext {
+    display: flex;
+    flex-direction: column;
+}
+@media screen and (min-width : 768px) {
+    .infoAndUpNext {
+        flex-direction: row;
+        margin: var(--padding) 0;
+    }
 }
