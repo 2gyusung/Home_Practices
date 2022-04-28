@@ -44,4 +44,4 @@ const highlightMenu = () => {
     }
   };
   
-  window.addEventListener('scroll', highlightMenu);
+  window.addEventListener('scroll', highlightMenu); //(메뉴 스크롤 드래그 할 때에 색상 표시)
