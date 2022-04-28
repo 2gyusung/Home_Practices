@@ -23,7 +23,7 @@ const highlightMenu = () => {
     let scrollPos = window.scrollY;
     console.log(scrollPos);
   
-    // adds 'highlight' class to my menu items
+    // adds 'highlight' class to my menu items  (메뉴 스크롤 드래그 할 때에 색상 표시)
     if (window.innerWidth > 960 && scrollPos < 600) {
       homeMenu.classList.add('highlight');
       aboutMenu.classList.remove('highlight');
