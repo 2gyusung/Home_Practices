@@ -9,8 +9,8 @@ addBtn.addEventListener('click' , function() {
     h1.classList.add('text')
 })
 removeBtn.addEventListener('click' , function() {
-    h1.classList.add('text')
+    h1.classList.remove('text')
 })
 toggleBtn.addEventListener('click' , function() {
-    h1.classList.add('text')
+    h1.classList.toggle('text')
 })
