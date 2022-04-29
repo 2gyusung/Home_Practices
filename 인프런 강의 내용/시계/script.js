@@ -12,6 +12,8 @@ function getTime(){
   let minute = now.getMinutes(); //현재 시각의 분에 해당하는 숫자
   let second = now.getSeconds();   // 현재 시각의 초
 
+
+  // 삼항 연산           true        false
   month = month < 10 ? `0${month}` : month; //? 10보다 작으면 0을 붙히고 출력
   date = date < 10 ? `0${date}` : date;
   hour = hour < 10 ? `0${hour}` : hour;
