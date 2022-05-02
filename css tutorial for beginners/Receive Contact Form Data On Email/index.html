@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Radio+Canada:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form onsubmit="sendEmail(); reset(); return false;">
+            <h3>GET IN TOUCH</h3>
+            <input type="text" name="" id="name" placeholder="Your Name" required>
+            <input type="email" name="" id="email" placeholder="email id" required>
+            <input type="text" name="" id="phone" placeholder="phone no." required>
+            <textarea name="message" id="message" rows="4" placeholder="How can we help you?"></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"> </script>
+        <script>
+            function sendEmail() {
+                Email.send({
+                Host : "smtp.gmail.com",
+                Username : "97gyusung@gmail.com",
+                Password : "aaa",
+                To : '97gyusung@gmail.com',
+                From : document.getElementById("email").value,
+                Subject : "New Contact Form Enquiry",
+                Body : "And this is the body"
+            }).then(
+            message => alert(message)
+            );
+            }
+        </script>
+
+   
+</body>
+<!-- /https://smtpjs.com/ -->
+</html>
