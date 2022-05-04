@@ -21,7 +21,7 @@ console.log(toBuy[2])
 toBuy[2] = 'water';
 console.log(toBuy[2])
 
-toBuy.push("meat");
+toBuy.push("meat"); // 배열 추가
 console.log(toBuy)
 
 
