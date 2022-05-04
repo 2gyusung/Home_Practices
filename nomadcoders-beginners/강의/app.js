@@ -67,6 +67,7 @@ console.log(krAge)
 
 
 
+
 // 노마드 리턴 문제
 const number = {
     plus:function(a ,b) {
@@ -87,3 +88,5 @@ const minResult = number.min(7, mulResult)
 console.log(plusResult);
 console.log(mulResult);
 console.log(minResult);
+
+
