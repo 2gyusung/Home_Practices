@@ -5,10 +5,10 @@
 // // **document.querySelector ,  document.getElementById("title"); : html 불러오기
 
 
-// const title = document.getElementById("title");
+// const title = document.getElementById("title"); html 불러오기
 // title.innerText = "Hello";
 
-// // console.dir 내부
+// // console.dir 내부 출력
 
 // -------------------------------------------------------
 
