@@ -23,7 +23,7 @@
 
         <div class="lamp-container">
             <img src="lamp.png" class="lamp">
-            <img src="light.png" class="light">
+            <img src="light.png" class="light" id="light">
         </div>
 
         <div class="text-container">
@@ -39,11 +39,14 @@
     </div>
 
     <script>
-       let btn = document.getElementById("btn");
+       var btn = document.getElementById("btn");
+       var light = document.getElementById("light");
+
 
 
        function  toggleBtn(){
-            btn.classList.toggle(".active")
+            btn.classList.toggle("active") //CSS 실행
+            light.classList.toggle("on")
        }
     </script>
 </body>
