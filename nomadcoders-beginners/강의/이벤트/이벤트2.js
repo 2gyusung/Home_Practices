@@ -1,17 +1,22 @@
 
+const h1 = document.getElementById("title");// 1. element(HTML) 찾아라
 
-const h2 = document.getElementById("title");
 
-
-function handleTitleClick() {
-if(h2.style.color === "blue") {
-    h2.style.color = "tomato"
+function handleTitleClick() {// 3. event 반응
+    const currentColor = h1.style.color;
+    let newColor;
+if(currentColor === "blue") {
+    newColor = "tomato"
 }else {
-    h2.style.color = "blue"
+   newColor = "blue"
 
 }
+h1.style.color = newColor;
 }
 
 
+h1.addEventListener("click" , handleTitleClick); // 이벤트 지정// 2. event listen
 
-h2.addEventListener("click" , handleTitleClick); // 이벤트 지정
+// 1. element(HTML) 찾아라
+// 2. event listen
+// 3. event 반응
