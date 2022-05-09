@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container" id="bike">
+    <nav>
+      <img src="BMW_bike_img/logo.png" class="logo" alt="">
+      <a href="#" class="btn">Best Drive</a>
+    </nav>
+    <div class="content">
+      <h2>THE BMW</h2>
+      <h1>G310R</h1>
+      <p>언제나 한계에 도전하고, 완벽한 주행 라인을 쫒는 당신을 위해 152kW (207 마력)이 함께합니다. 5,500 에서 14,500 rpm 사이에서 최소 100 Nm의 토크를 뿜어내며, 11,000rpm에서 최고 토크 113 Nm의 걷잡을 수 없는 힘이 당신의 RR를 한계까지 밀어부칩니다. 첫 세대의 RR이 모터사이클 시장의 넋을 빼놓은지 10년이 된 지금, 우리는 이제 새로운 차원의 성능을 향해 진입합니다. RR는 거의 모든 부분에서 환골탈태 하였으며, 그 결과로 더욱 가벼워지고, 놀라운 성능 향상을 이루었습니다. 앞서 나가고 싶으십니까? 언제나 이기고 싶으신가요? RR이 당신을 기다립니다.</p>
+      <h3>Choose your colour</h3>
+      <div class="color-select">
+        <div id="red"></div>
+        <div id="blue"></div>
+        <div id="black"></div>
+    </div>
+  </div>
+  </div>
+<script>
+  let redBtn = document.getElementById("red");
+  let blueBtn = document.getElementById("blue");
+  let blackBtn = document.getElementById("black");
+  let bikeBtn = document.getElementById("bike");
+
+
+
+redBtn.onclick = function(){
+  bike.style.backgroundImage = "url(BMW_bike_img/BMW1.png)";
+}
+blueBtn.onclick = function(){
+  bike.style.backgroundImage = "url(BMW_bike_img/BMW2.png)";
+}
+blackBtn.onclick = function(){
+  bike.style.backgroundImage = "url(BMW_bike_img/BMW3.png)";
+}
+</script>
+</body>
+</html>
