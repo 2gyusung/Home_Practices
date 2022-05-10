@@ -195,11 +195,12 @@ function onLoginSubmit(event) {
   paintGreetings(username);
 }
 
-function paintGreetings(username) {
-  greeting.innerText = `Hello ${username}`;
+function paintGreetings(username) { //반복 줄이기 위해
+  greeting.innerText = `Hello ${username} `;
   greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 
+//localStorage 정보 저장, 불러오기 ,삭제
 const savedUsername = localStorage.getItem(USERNAME_KEY); // 첫번째 단계
 
 if (savedUsername === null) {
