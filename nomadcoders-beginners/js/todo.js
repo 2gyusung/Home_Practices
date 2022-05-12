@@ -1,6 +1,12 @@
 const toDoForm = document.getElementById("todo-form");
-const toDoInput = document.querySelector("#todo-form input")
+const toDoInput = document.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
+
+const toDos = [];
+
+function saveToDos() {
+    localStorage.setItem("todos",JSON.stringify(toDos));
+}
 
 function deleteToDo(event) {//세번째 todo [삭제 버튼 이벤트] 
     // console.log(event);
@@ -8,12 +14,13 @@ function deleteToDo(event) {//세번째 todo [삭제 버튼 이벤트]
     li.remove();
 }
 
+
 function paintToDo(newToDo) {//두번째
     // console.log(`i will paint ${newToDo}`); (출력)
-    const li  = document.createElement("li") //부모
-    const spans = document.createElement("span") //자식
+    const li  = document.createElement("li"); //부모
+    const spans = document.createElement("span"); //자식
     spans.innerHTML = newToDo; // newToDo 입력된 값 추가
-    const btn  = document.createElement("button") //btn html 추가
+    const btn  = document.createElement("button"); //btn html 추가
     btn.innerHTML = "❌";
     btn.addEventListener("click" ,deleteToDo);
     li.appendChild(spans);
@@ -26,7 +33,9 @@ function handleToDoSubmit(event) { //첫번째
     event.preventDefault();
     const newToDo = toDoInput.value;
     toDoInput.value = "";   //?
-    paintToDo(newToDo)
+    toDos.push(newToDo);
+    paintToDo(newToDo);
+    saveToDos();
     
 }
 
