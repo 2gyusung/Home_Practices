@@ -9,6 +9,7 @@ const superEventHandler = {
     handleMouseOn: function() {
         change.innerText =" The mouse is here !";
         change.style.color = colors[0];
+       
         test.innerText = " 연습합니다 자바스크립트"
         test.style.color = 'blue'
     },
@@ -33,5 +34,7 @@ change.addEventListener("mouseenter",superEventHandler.handleMouseOn);
 change.addEventListener("mouseleave",superEventHandler.handleMouseLeave);
 change.addEventListener("resize",superEventHandler.handleMouseResize);
 change.addEventListener("contextmenu",superEventHandler.handleMouseRightClick);
+
+
 test.addEventListener("mouseenter",superEventHandler.handleMouseOn);
 
