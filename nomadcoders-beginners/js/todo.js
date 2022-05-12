@@ -4,6 +4,9 @@ const toDoList = document.getElementById("todo-list");
 
 const toDos = [];
 
+
+   //JSON.stringify(변수명) -> 자바스크립트의 값이나 객체(array등)를 스트링으로 변환
+    //JSON.parse("스트링") -> 단순한 스트링을 자바스크립트가 이해할 수 있는 array로 변환 
 function saveToDos() {
     localStorage.setItem("todos",JSON.stringify(toDos));
 }
@@ -42,3 +45,4 @@ function handleToDoSubmit(event) { //첫번째
 toDoForm.addEventListener("submit", handleToDoSubmit);
 
 //#7 [2021 UPDATE] TO DO LIST 강의 전체적 으로 다시 복습
+// https://velog.io/@csea9000/%EB%85%B8%EB%A7%88%EB%93%9C%EC%BD%94%EB%8D%94-Vanilla-JS-TODOLIST :: 참고하기
