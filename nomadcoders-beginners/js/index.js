@@ -2,14 +2,14 @@ const toDoForm = document.getElementById("todo-form")
 const toDoInput = document.getElementById("#todo-form input")
 const toDoList = document.getElementById("todo-list")
 
-function deleteToDo(event) {
+function deleteToDo(event) { //삭제
 //  console.log(event.target.parentElement.innerText);
     const li = event.target.parentElement;
     li.remove();
 }
 
 
-function paintToDo(newToDo) {
+function paintToDo(newToDo) { //입력
  const li = document.createElement('li')
  const span = document.createElement('span')
  span.innerText = newToDo;
