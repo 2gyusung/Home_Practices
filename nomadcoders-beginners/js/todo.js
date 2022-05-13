@@ -1,4 +1,4 @@
-const { stringify } = require("querystring");
+
 
 const toDoForm = document.getElementById("todo-form");
 const toDoInput = document.querySelector("#todo-form input");
@@ -8,7 +8,7 @@ const toDoList = document.getElementById("todo-list");
 const TODOS_KEY = "todos";
 
 
-const toDos = [];
+let toDos = [];
 
 
 function saveToDos() {
@@ -59,8 +59,11 @@ const savedToDos = localStorage.getItem(TODOS_KEY);
 // parse() : array로 변경
 if (savedToDos !== null) {
   const parsedToDos = JSON.parse(savedToDos); //배열
-  parsedToDos.forEach((item) => console.log("this is the turn of ", item));
+  toDos = paintToDos;
+  parsedToDos.forEach(paintToDo);
+
 }
+
 // ⬆ 화살표 함수랑 동일함
 // fuction sayHello(item){
 //     console.log("this is the turn of ", item);
