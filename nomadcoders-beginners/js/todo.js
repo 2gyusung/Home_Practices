@@ -59,7 +59,7 @@ const savedToDos = localStorage.getItem(TODOS_KEY);
 // parse() : array로 변경
 if (savedToDos !== null) {
   const parsedToDos = JSON.parse(savedToDos); //배열
-  toDos = paintToDos;
+  toDos = parsedToDos;
   parsedToDos.forEach(paintToDo);
 
 }
