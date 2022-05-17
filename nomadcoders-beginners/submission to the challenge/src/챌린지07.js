@@ -5,3 +5,97 @@
 // Math.ceil() : 주어진 숫자를 올림 하기 위해 사용하는 함수입니다. 숫자는 정수 형태로 반환됩니다. 참고 자료
 // parseInt() : 주어진 문자열을 정수형으로 변환해서 반환하는 함수입니다. 참고 자료
 // innerHTML : 요소 내에 포함된 HTML을 나타내는 프로퍼티입니다. HTML을 읽어들이거나 설정할 수 있습니다. 참고 자료
+
+
+const form = document.querySelector(".js-form"),
+  range = form.querySelector(".js-range"),
+  input = form.querySelector(".js-input"),
+  submitBtn = form.querySelector("button"),
+  choose = document.querySelector(".js-choose"),
+  result = document.querySelector(".js-result"),
+  rangeText = document.querySelector(".js-rangeText");
+
+let maxValue = range.max;
+let randomNumber = Math.floor(Math.random() * maxValue);
+
+function handleRange(event) {
+  const changedMax = event.target.value;
+  rangeText.innerHTML = `Generate a number between 0 and ${changedMax}`;
+  maxValue = changedMax;
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+}
+
+function handleChoose() {
+  if (parseInt(maxValue) < parseInt(input.value)) {
+    alert("최대값보다 입력값이 커요!");
+    input.value = "";
+  } else {
+    randomNumber = Math.floor(Math.random() * maxValue);
+    choose.innerHTML = `You chose : ${input.value}, the machine chose : ${randomNumber}`;
+    if (randomNumber === parseInt(input.value)) {
+      result.innerHTML = "You Win!!";
+    } else {
+      result.innerHTML = "You Lost..";
+    }
+  }
+}
+
+function init() {}
+
+range.addEventListener("change", handleRange);
+form.addEventListener("submit", handleSubmit);
+submitBtn.addEventListener("click", handleChoose);
+
+init();
+
+
+
+
+
+
+// const form = document.querySelector(".js-form"),
+//   range = form.querySelector(".js-range"),
+//   input = form.querySelector(".js-input"),
+//   submitBtn = form.querySelector("button"),
+//   choose = document.querySelector(".js-choose"),
+//   result = document.querySelector(".js-result"),
+//   rangeText = document.querySelector(".js-rangeText");
+
+// let maxValue = range.max;
+// let randomNumber = Math.floor(Math.random() * maxValue);
+
+// function handleRange(event) {
+//   const changedMax = event.target.value;
+//   rangeText.innerHTML = `Generate a number between 0 and ${changedMax}`;
+//   maxValue = changedMax;
+// }
+
+// function handleSubmit(event) {
+//   event.preventDefault();
+// }
+
+// function handleChoose() {
+//   if (parseInt(maxValue) < parseInt(input.value)) {
+//     alert("최대값보다 입력값이 커요!");
+//     input.value = "";
+//   } else {
+//     randomNumber = Math.floor(Math.random() * maxValue);
+//     choose.innerHTML = `You chose : ${input.value}, the machine chose : ${randomNumber}`;
+//     if (randomNumber === parseInt(input.value)) {
+//       result.innerHTML = "You Win!!";
+//     } else {
+//       result.innerHTML = "You Lost..";
+//     }
+//   }
+// }
+
+// function init() {}
+
+// range.addEventListener("change", handleRange);
+// form.addEventListener("submit", handleSubmit);
+// submitBtn.addEventListener("click", handleChoose);
+
+// init();
