@@ -19,50 +19,50 @@ function saveToDos() {
     //  localStorage array로 저장못함
 }
 
-function deleteToDo(event) {//세번째 todo [삭제 버튼 이벤트] 
-    // console.log(event);
-    const li = event.target.parentElement; //?
+function deleteToDo(event) {
+    const li = event.target.parentElement;
     li.remove();
-}
-
-
-function paintToDo(newToDo) {//두번째
-    // console.log(`i will paint ${newToDo}`); (출력)
-    const li  = document.createElement("li"); //부모
-    const spans = document.createElement("span"); //자식
-    spans.innerHTML = newToDo; // newToDo 입력된 값 추가
-    const btn  = document.createElement("button"); //btn html 추가
-    btn.innerHTML = "❌";
-    btn.addEventListener("click" ,deleteToDo);
-    li.appendChild(spans);
-    li.appendChild(btn);
-    // console.log(li);
-    toDoList.appendChild(li); // todolist 입력된 값 추가
-}
-
-function handleToDoSubmit(event) { //첫번째
-    event.preventDefault();
-    const newToDo = toDoInput.value;
-    toDoInput.value = "";   //?
-    toDos.push(newToDo);
-    paintToDo(newToDo);
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));
     saveToDos();
-    
-}
+  }
 
 
-toDoForm.addEventListener("submit", handleToDoSubmit);
+  function paintToDo(newTodo) {
+    const li = document.createElement("li");
+    li.id = newTodo.id;
+    const span = document.createElement("span");
+    span.innerText = newTodo.text;
+    const button = document.createElement("button");
+    button.innerText = "❌";
+    button.addEventListener("click", deleteToDo);
+    li.appendChild(span);
+    li.appendChild(button);
+    toDoList.appendChild(li);
+  }
 
-const savedToDos = localStorage.getItem(TODOS_KEY);
+  function handleToDoSubmit(event) {
+    event.preventDefault();
+    const newTodo = toDoInput.value;
+    toDoInput.value = "";
+    const newTodoObj = {
+      text: newTodo,
+      id: Date.now(),
+    };
+    toDos.push(newTodoObj);
+    paintToDo(newTodoObj);
+    saveToDos();
+  }
 
-// stringify : 값을 string으로 저장 하고 싶을 때 사용
-// parse() : array로 변경
-if (savedToDos !== null) {
-  const parsedToDos = JSON.parse(savedToDos); //배열
-  toDos = parsedToDos;
-  parsedToDos.forEach(paintToDo);
 
-}
+  toDoForm.addEventListener("submit", handleToDoSubmit);
+
+  const savedToDos = localStorage.getItem(TODOS_KEY);
+  
+  if (savedToDos !== null) {
+    const parsedToDos = JSON.parse(savedToDos);
+    toDos = parsedToDos;
+    parsedToDos.forEach(paintToDo);
+  }
 
 // ⬆ 화살표 함수랑 동일함
 // fuction sayHello(item){
