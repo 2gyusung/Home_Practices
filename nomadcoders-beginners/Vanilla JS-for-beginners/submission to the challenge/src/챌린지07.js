@@ -56,46 +56,25 @@ init();
 
 
 
-// const form = document.querySelector(".js-form"),
-//   range = form.querySelector(".js-range"),
-//   input = form.querySelector(".js-input"),
-//   submitBtn = form.querySelector("button"),
-//   choose = document.querySelector(".js-choose"),
-//   result = document.querySelector(".js-result"),
-//   rangeText = document.querySelector(".js-rangeText");
+// const guessForm = document.getElementById("js-guess");
+// const result = document.getElementById("js-result");
+// const maxNumber = document.getElementById("maxNumber");
 
-// let maxValue = range.max;
-// let randomNumber = Math.floor(Math.random() * maxValue);
-
-// function handleRange(event) {
-//   const changedMax = event.target.value;
-//   rangeText.innerHTML = `Generate a number between 0 and ${changedMax}`;
-//   maxValue = changedMax;
-// }
-
-// function handleSubmit(event) {
-//   event.preventDefault();
-// }
-
-// function handleChoose() {
-//   if (parseInt(maxValue) < parseInt(input.value)) {
-//     alert("최대값보다 입력값이 커요!");
-//     input.value = "";
-//   } else {
-//     randomNumber = Math.floor(Math.random() * maxValue);
-//     choose.innerHTML = `You chose : ${input.value}, the machine chose : ${randomNumber}`;
-//     if (randomNumber === parseInt(input.value)) {
-//       result.innerHTML = "You Win!!";
-//     } else {
-//       result.innerHTML = "You Lost..";
-//     }
+// function handleGuessSubmit(e) {
+//   e.preventDefault();
+//   const guessInput = guessForm.querySelector("input");
+//   if (guessInput.value === "" && maxNumber === "") {
+//     return;
 //   }
+//   const max = maxNumber.value;
+//   const random = Math.ceil(Math.random() * max);
+//   const userGuess = parseInt(guessInput.value, 10);
+//   const resultSpan = result.querySelector("span");
+//   resultSpan.innerHTML = `
+//   You chose: ${userGuess},
+//   the machine chose: ${random}.<br />
+//   <strong>${userGuess === random ? "You won!" : "You lost!"}</strong>
+//   `;
 // }
 
-// function init() {}
-
-// range.addEventListener("change", handleRange);
-// form.addEventListener("submit", handleSubmit);
-// submitBtn.addEventListener("click", handleChoose);
-
-// init();
+// guessForm.addEventListener("submit", handleGuessSubmit);
