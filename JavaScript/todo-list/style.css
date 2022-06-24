@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  min-height: 100vh;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.task-area {
+  border: 1px solid black;
+}
+.task-tabs {
+  display: flex;
+  border-bottom: 1px solid black;
+  position: relative;
+}
+.task-tabs div {
+  padding: 1em;
+}
+
+#under-line {
+  height: 4px;
+  background-color: royalblue;
+  position: absolute;
+  width: 70px;
+  left: 0px;
+  top: 52px;
+  padding: 0px;
+}
+.task {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+}
