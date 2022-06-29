@@ -25,7 +25,8 @@ function play() {
     return ;
   }
   if(history.includes(userValue)) {
-    resultArea.textContent = "동일한 숫자 입니다 ";
+    resultArea.textContent
+     = "동일한 숫자 입니다 ";
     return 
 
   }
