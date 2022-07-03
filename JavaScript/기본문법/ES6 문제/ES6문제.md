@@ -41,7 +41,7 @@ function calculate(obj){
 calculate({a:1,b:2,c:3})
 
 ```
-4. 다음 문제에 정답이 true가 나오게 하시오
+4. 다음 문제에 정답이 true가 나오게 하시오 *
 ```javascript
 // let name="noona store"
 // let fruits = ["banana","apple","mango"]
@@ -88,7 +88,7 @@ function getNumber(){
 
 console.log(getNumber())
 ```
-6. 다음의 결과가 true가 되게 하시오
+6. 다음의 결과가 true가 되게 하시오 *
 ```javascript
 // function getCalendar(first, ...rest) {
 //   return (
@@ -112,7 +112,7 @@ function getCalendar(first, ...rest) {
 console.log(getCalendar("January","Febuary","March")); // 여기를 바꾸시오
 ```
 
-7. 두 어레이들중 최소값을 찾는 함수를 완성하시오
+7. 두 어레이들중 최소값을 찾는 함수를 완성하시오 *
 ```javascript
 // function getMinimum(){
 //     let a= [45,23,78]

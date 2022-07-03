@@ -110,4 +110,17 @@ let person = {
     }
 }
 person.getInfo()
+
+let age = 17
+let person = {
+    name : 'gs',
+    age : 20 ,
+    getInfo :()=>{
+        console.log(this.age)
+        //답 : 20     
+        // this 쓸 때에 일반함수로  작성한다.     
+    }
+}
+person.getInfo()
+<!-- 답 :[undefined] // this 쓸 때에 일반함수로  작성한다.-->
 ```
