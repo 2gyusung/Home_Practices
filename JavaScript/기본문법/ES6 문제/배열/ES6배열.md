@@ -1,4 +1,3 @@
-
 ```
 forEach : 반환값이 없다, 단순 for문과 같이 작동한다.
 map : 반환값을 배열에 담아 반환한다.
@@ -9,25 +8,11 @@ find : 조건에 충족하는 아이템 하나만 반환(여러개라면 첫번�
 findIndex : 조건에 충족하는 아이템의 인덱스값 반환 (여러개라면 첫번째아이템의 인덱스번호만 반환)
 ```
 
-```javascript
-let names = [
-  "Steven Paul Jobs",
-  "Bill Gates",
-  "Mark Elliot Zuckerberg",
-  "Elon Musk",
-  "Jeff Bezos",
-  "Warren Edward Buffett",
-  "Larry Page",
-  "Larry Ellison",
-  "Tim Cook",
-  "Lloyd Blankfein",
-];
-```
-- forEach
-```javascript
--기본적인 방법
 
-for(let i=0; i<names.length; i++){
+
+```javascript
+
+for(let i=0; i<names.length; i++){  //기본적인 방법
     console.log(names[i]);
 }
 
