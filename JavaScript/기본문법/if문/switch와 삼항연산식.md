@@ -8,7 +8,7 @@ case가 값으로 딱 정해진 경우에만 사용가능
 
 case마다 break를 넘겨줘야하는 이유는 그렇지 않으면 밑에 케이스도 다르기 때문이다
 
-let food = '햄버거'
+let food2  = '햄버거'
 switch(food){
     case '피자':
         console.log("피자를 주세요")
