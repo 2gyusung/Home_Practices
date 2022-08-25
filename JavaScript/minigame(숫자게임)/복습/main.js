@@ -15,61 +15,66 @@
 // computerNum 를 1~10사이의 랜덤번호를 받고싶다면? O
 // input창에 포커스를 두면 내가 그전에 입력한 값이 자동으로 지워지게 하려면 어떻게 해야할까? (유저는 매번 입력한 값을 일일이 지우기 귀찮다) O
 
+
 let computerNum = 0
-let playButton = document.getElementById('play-button')
+let playButton = document.getElementById("play-button")
 let userInput = document.getElementById('user-input')
 let resultArea = document.getElementById('result-area')
-let resetArea = document.getElementById('reset-button')
-let chances = 10;
-let gameOver = false
+let resetButton = document.getElementById('reset-button')
 let chanceArea = document.getElementById('chance-area')
+let chances = 5;
+let gameOver = false;
+let history = []
 
-playButton.addEventListener("click", play)
-resetArea.addEventListener('click',reset)
+playButton.addEventListener('click', play)
+resetButton.addEventListener('click', reset)
+userInput.addEventListener('focus', function () { userInput.value = ''; });
 
-//숫자 랜덤 출력
-function pickRandomNum(){
-    computerNum =  Math.floor(Math.random() * 10) + 1 ;
-    console.log('정답', computerNum);
+
+function pickRandomNum() {
+    computerNum = Math.floor(Math.random() * 50) + 1
 }
 
+function play() {
+    let userValue = userInput.value
 
-// 실행 
-function play(){
- let userValue = userInput.value;
+    if (userValue < 1 || userValue > 100) {
+        resultArea.textContent = '1 과 100 사이의 숫자를 입력해주세요'
+        return;
+    }
+    if (history.includes(userValue)) {
+        resultArea.textContent = '입력된 숫자입니다.'
+        return;
+    }
+    chances--;
+    chanceArea.textContent = `남은 기회 : ${chances}번`
 
- chances --;
- chanceArea.textContent = `남은 기회 ${chances}`
- console.log("chances" , chances);
-if(userValue < computerNum){
-    resultArea.textContent = "UP!"
-    userInput.value = ""
-    console.log("UP!");
-}else if(userValue > computerNum){
-    resultArea.textContent = "Down!"
-    userInput.value = ""
-    console.log("DOWN!");
-}else {
-    resultArea.textContent = "맞추셨습니다!"
-    console.log('맞추셨습니다');
-    playButton.disabled = true
+
+    if (userValue < computerNum) {
+        resultArea.textContent = 'up'
+    } else if (userValue > computerNum) {
+        resultArea.textContent = 'down'
+    } else {
+        resultArea.textContent = '맞추셨습니다'
+        gameOver = true;
+    }
+
+    history.push(userValue)
+
+    if (chances < 1) {
+        console.log('게임오버');
+        resultArea.textContent = '게임오버 !'
+        gameOver = true
+    }
+
+    if (gameOver == true) {
+        playButton.disabled = true;
+    }
 }
-if(chances < 1 ){
- gameOver = true;
-}
-if(gameOver == true) {
-    playButton.disabled = true
-}
+
+function reset() {
+    userInput.value = "";
+    pickRandomNum();
 }
 
-// 리셋 
-function reset(){
-    //  깨끗하게 정리
-userInput.value = ""
-//  새로운 번호 생성
-pickRandomNum()
-}
-
-
-
-pickRandomNum();
+pickRandomNum() 

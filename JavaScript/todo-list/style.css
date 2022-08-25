@@ -2,42 +2,39 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
+}
+body{
+}
+.container{
+  min-height: 100vh; /* 내가 보는 화면의 높이 만큼 조절 */
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
-.container {
-  min-height: 100vh;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-}
-.task-area {
-  border: 1px solid black;
+.task-area{
+  border: 1px solid lightslategray;
 }
 .task-tabs {
   display: flex;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid lightslategray;
   position: relative;
 }
-.task-tabs div {
-  cursor: pointer;
-}
-.task-tabs div {
+.task-tabs div{
   padding: 1em;
 }
 
-#under-line {
+#under-line{
   height: 4px;
-  background-color: royalblue;
+  background-color: gainsboro;
   position: absolute;
   width: 80px;
   left: 0px;
   top: 52px;
-  padding: 0px;
+  padding: 0;
 }
-.task {
+
+.task{
   display: flex;
   justify-content: space-between;
   padding: 1em;
-}
-
-.task-done{
-  text-decoration: line-through;
 }
