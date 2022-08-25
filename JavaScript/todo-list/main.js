@@ -11,128 +11,29 @@
 
 let taskInput = document.getElementById('task-input')
 let addButton = document.getElementById('add-button')
-let tabs = document.querySelectorAll('.task-tabs div')
 let taskList = [];
-let mode = "all";
-let filterList = [];
+addButton.addEventListener('click', addTask)
 
-
-function randomIDGenerate() {
-  // ID random값 나오게 해준다. https://gist.github.com/gordonbrander/2230317 참조
-
-  return '_' + Math.random().toString(36).substr(2, 9);
-}
-
-for (let i = 1; i < tabs.length; i++) {
-  tabs[i].addEventListener("click", function (event) { filter(event) })
-}
-
-function filter(event) {
-  // console.log('클릭');
-  mode = event.target.id;
-  filterList = [];
-  if (mode == "all") {
-    render()
-  } else if (mode == 'ongoing') {
-    for (let i = 0; i < taskList.length; i++) {
-      if (taskList[i].isComplete == false) {
-        filterList.push(taskList[i])
-      }
-    }
-   
-    render();
-  } else if (mode == done) {
-    for (let i = 0; i < taskList; i++) {
-      if (taskList[i].isComplete == true) {
-        filterList.push(taskList[i])
-      }
-    }
-    render();
-  }
-
-}
-
-
-function toogleComplete(id) {
-  // console.log('id :', id);
-  for (let i = 0; i < taskList.length; i++) {
-    if (taskList[i].id == id) {
-      taskList[i].isComplete = !taskList[i].isComplete;
-      break;
-    }
-  }
-
-  render();
-
-
-}
-
-
-function render() {
-  let list = [];
-  if (mode == "all") {
-    list == taskList;
-  } else if (mode == "ongoing" || mode == "done") {
-    list = filterList;
-  }
-
-  let resultHTML = '';
-  for (let i = 0; i < list.length; i++) {
-    if (list[i].isComplete == true) {
-      resultHTML += `<div class="task"> 
-    <div class ='task-done'>${list[i].taskContent}</div>
-    <div>
-    <button onclick="toogleComplete('${list[i].id}')">Check</button>
-    <button onclick="deleteTask('${list[i].id}')">Delete</button>
-  </div>
-  </div>`
-    } else {
-      resultHTML += `<div class="task"> 
-    <div>${list[i].taskContent}</div>
-    <div>
-    <button onclick="toogleComplete('${list[i].id}')">Check</button>
-    <button onclick="deleteTask('${list[i].id}')">Delete</button>
-  </div>
-  </div>`;
-
-    }
-
-
-  }
-  document.getElementById('task-board').innerHTML = resultHTML;
-}
-
-
-function addTask() {
-  let task = {
-    id: randomIDGenerate(),
-    taskContent: taskInput.value,
-    isComplete: false,
-  }
-
-  taskList.push(task);
+function addTask(){
+  let taskContent = taskInput.value
+  taskList.push(taskContent)
   console.log(taskList);
   render();
-
-
 }
-
-function deleteTask(id) {
-  for (let i = 0; i < taskList.length; i++) {
-    if (taskList[i].id == id) {
-      taskList.splice(i, 1)
-      break;
-    }
+ 
+function render() {
+  let resultHTML = '';
+  for(let i = 0; i<taskList.length; i++){
+    resultHTML += `
+    <div class="task">
+    <div>${taskList[i]}</div> 
+    <div>
+    <button>✔</button>
+    <button>🗑</button>
+  </div>
+  </div>
+    `
   }
-  render();
-  filter();
+
+  document.getElementById('task-board').innerHTML = resultHTML;
 }
-
-// function filter(event) {
-//   console.log('클릭');
-// }
-
-
-addButton.addEventListener('click', addTask);
-// https://hianna.tistory.com/483
-
