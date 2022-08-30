@@ -15,25 +15,64 @@ let taskList = [];
 addButton.addEventListener('click', addTask)
 
 function addTask(){
-  let taskContent = taskInput.value
-  taskList.push(taskContent)
+  let task = {
+    id : randomIDGenerate(),
+    taskContent : taskInput.value,
+    isComplete  : false
+  };
+  taskList.push(task)
   console.log(taskList);
   render();
 }
  
-function render() {
+function render() { //UI
   let resultHTML = '';
   for(let i = 0; i<taskList.length; i++){
-    resultHTML += `
-    <div class="task">
-    <div>${taskList[i]}</div> 
-    <div>
-    <button>✔</button>
-    <button>🗑</button>
-  </div>
-  </div>
-    `
+    if(taskList[i].isComplete == true) {
+      resultHTML += `
+      <div class="task">
+      <div class='task-done'>${taskList[i].taskContent}</div> 
+      <div>
+      <button onclick = "toogleComplete('${taskList[i].id}')">✔</button>
+      <button>🗑</button>
+    </div>
+    </div>
+      `
+    }else{
+      resultHTML += `
+      <div class="task">
+      <div>${taskList[i].taskContent}</div> 
+      <div>
+      <button onclick = "toogleComplete('${taskList[i].id}')">✔</button>
+      <button>🗑</button>
+    </div>
+    </div>`
   }
+}
+
 
   document.getElementById('task-board').innerHTML = resultHTML;
 }
+
+function toogleComplete(id) {
+  // console.log('id :', id);
+  for (let i = 0; i < taskList.length; i++) {
+    if (taskList[i].id == id) {
+      taskList[i].isComplete = !taskList[i].isComplete;
+      break; //for문의 종료
+    }
+  }
+  render();
+  console.log(taskList);
+}
+
+
+function randomIDGenerate() {
+  // ID random값 나오게 해준다. https://gist.github.com/gordonbrander/2230317 참조
+
+  return '_' + Math.random().toString(36).substr(2, 9);
+}
+
+// for (let i = 1; i < tabs.length; i++) {
+//   tabs[i].addEventListener("click", function (event) { filter(event) })
+// }
