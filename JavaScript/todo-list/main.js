@@ -11,8 +11,17 @@
 
 let taskInput = document.getElementById('task-input')
 let addButton = document.getElementById('add-button')
+let tabs = document.querySelectorAll('.task-tabs div')
 let taskList = [];
 addButton.addEventListener('click', addTask)
+
+
+
+for(let i = 1; i<tabs.length; i++){
+  tabs[i].addEventListener("click", function(event){filter(event)})
+}
+
+
 
 function addTask(){
   let task = {
@@ -66,7 +75,7 @@ function toogleComplete(id) { //랜덤 ID 부여
   console.log(taskList);
 }
 
-function deleteTask(id){
+function deleteTask(id){ //삭제 기능
   // console.log('삭제하자' ,id);
   for (let i = 0; i < taskList.length; i++) {
     if (taskList[i].id == id) {
@@ -78,7 +87,11 @@ render();
 console.log(taskList);
 }
 
-function randomIDGenerate() {
+function filter(event){
+  console.log('click', event.target);
+}
+
+function randomIDGenerate() {   // ID random값 
   // ID random값 나오게 해준다. https://gist.github.com/gordonbrander/2230317 참조
 
   return '_' + Math.random().toString(36).substr(2, 9);
