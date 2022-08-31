@@ -34,7 +34,7 @@ function render() { //UI
       <div class='task-done'>${taskList[i].taskContent}</div> 
       <div>
       <button onclick = "toogleComplete('${taskList[i].id}')">✔</button>
-      <button>🗑</button>
+      <button onclick = "deleteTask('${taskList[i].id}')">🗑</button>
     </div>
     </div>
       `
@@ -44,7 +44,7 @@ function render() { //UI
       <div>${taskList[i].taskContent}</div> 
       <div>
       <button onclick = "toogleComplete('${taskList[i].id}')">✔</button>
-      <button>🗑</button>
+      <button onclick = "deleteTask('${taskList[i].id}')">🗑</button>
     </div>
     </div>`
   }
@@ -54,7 +54,7 @@ function render() { //UI
   document.getElementById('task-board').innerHTML = resultHTML;
 }
 
-function toogleComplete(id) {
+function toogleComplete(id) { //랜덤 ID 부여
   // console.log('id :', id);
   for (let i = 0; i < taskList.length; i++) {
     if (taskList[i].id == id) {
@@ -66,6 +66,17 @@ function toogleComplete(id) {
   console.log(taskList);
 }
 
+function deleteTask(id){
+  // console.log('삭제하자' ,id);
+  for (let i = 0; i < taskList.length; i++) {
+    if (taskList[i].id == id) {
+      taskList.splice(i,1)//splice(시작점, 몇개 아이템)
+      break;
+    }
+}
+render();
+console.log(taskList);
+}
 
 function randomIDGenerate() {
   // ID random값 나오게 해준다. https://gist.github.com/gordonbrander/2230317 참조
