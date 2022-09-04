@@ -56,8 +56,8 @@ function render() { //UI
       <div class="task">
       <div>${list[i].taskContent}</div> 
       <div>
-      <button onclick = "toogleComplete('${list[i].id}')">✔</button>
-      <button onclick = "deleteTask('${list[i].id}')">🗑</button>
+      <button class = "toogleBtn" onclick = "toogleComplete('${list[i].id}')">✔</button>
+      <button class = "toogleBtn" onclick = "deleteTask('${list[i].id}')">🗑</button>
     </div>
     </div>`
     }

@@ -77,3 +77,8 @@ font-weight: bold;
   cursor: pointer;
 
 }
+.toogleBtn{
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+}
