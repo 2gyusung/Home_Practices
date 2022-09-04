@@ -53,3 +53,7 @@ transition: 0.5s;
 border-radius: 10px;
 font-weight: bold;
 }
+.task-tabs div {
+  cursor: pointer;
+
+}

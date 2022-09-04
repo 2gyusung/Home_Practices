@@ -54,7 +54,7 @@ function render() { //UI
   document.getElementById('task-board').innerHTML = resultHTML;
 }
 
-function toogleComplete(id) { //완료 기능
+function toogleComplete(id) { 
   // console.log('id :', id);
   for (let i = 0; i < taskList.length; i++) {
     if (taskList[i].id == id) {
