@@ -1,15 +1,35 @@
-* {
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400&family=Poppins:ital,wght@0,100;0,200;0,300;1,100;1,200&display=swap');* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 body{
+  font-family: 'Poppins','Noto Serif KR',  sans-serif;
 }
 .container{
   min-height: 100vh; /* 내가 보는 화면의 높이 만큼 조절 */
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
   border-radius: 35px;
+}
+h1 {
+  text-align: center;
+  margin: 100px;
+  padding: 25px;
+}
+.input-area{
+  padding: 25px;
+  text-align: center;
+}
+input{
+  padding: 12px;
+  border: 1px solid lightslategray;
+  border-radius: 8px;
+}
+#add-button{
+  padding: 12px;
+  border: 1px solid lightslategray;
+  background-color: transparent;
+  border-radius: 8px;
 }
 
 .task-area{
