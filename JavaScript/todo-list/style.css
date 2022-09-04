@@ -9,6 +9,7 @@ body{
 .container{
   min-height: 100vh; /* 내가 보는 화면의 높이 만큼 조절 */
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  border-radius: 35px;
 }
 
 .task-area{
@@ -16,7 +17,6 @@ body{
 }
 .task-tabs {
   display: flex;
-  border-bottom: 1px solid lightslategray;
   position: relative;
 }
 .task-tabs div{
@@ -25,7 +25,6 @@ body{
 
 #under-line{
   height: 4px;
-  background-color: gainsboro;
   position: absolute;
   width: 80px;
   left: 0px;
@@ -41,4 +40,16 @@ body{
 
 .task-done{
   text-decoration: line-through;
+}
+
+.task-tabs div{
+  cursor: pointer;
+  
+}
+.task-tabs div:hover{
+background-color:  gainsboro;
+color: white;
+transition: 0.5s;
+border-radius: 10px;
+font-weight: bold;
 }
