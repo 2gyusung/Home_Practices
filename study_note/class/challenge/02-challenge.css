@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.table-wrapper {
+  width: 1200px;
+  margin: 45px auto;
+  padding: 120px;
+}
+.table-data {
+  display: flex;
+  justify-content: space-around;
+  background-color: gray;
+}
+.data-wrapper {
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid black;
+    padding: 12px;
+    text-align: left;
+
+}
+.txtData{
+  
+    
+}
